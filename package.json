@@ -1,0 +1,29 @@
+{
+  "name": "passive-income-planner",
+  "version": "1.0.0",
+  "description": "Financial planner built with MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryan-hennigan/passive-income-planner.git"
+  },
+  "author": "Ryan Hennigan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryan-hennigan/passive-income-planner/issues"
+  },
+  "homepage": "https://github.com/ryan-hennigan/passive-income-planner#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
