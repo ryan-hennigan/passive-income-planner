@@ -34,12 +34,18 @@ class AppNavbar extends Component{
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <NavLink href="https://github.com/ryan-hennigan">
-                                        Github
-                                    </NavLink>
-
+                                    <NavLink href="/">Home</NavLink>
                                 </NavItem>
-
+                                <NavItem>
+                                    <NavLink href="/profile">Profile</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="/expenses">Expenses</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="/incomes">Incomes</NavLink>
+                                </NavItem>
+                                
                             </Nav>
                         </Collapse>
                     </Container>
