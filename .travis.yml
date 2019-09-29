@@ -1,8 +1,3 @@
 language: node_js
 node_js:
   - 6
-  
-deploy:
-  provider: heroku
-  api_key: e8423dda-21bd-4b53-b948-042ce47c14f5
-  app: pass-inc-plan
