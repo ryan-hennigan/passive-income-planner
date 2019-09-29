@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-//const config = require('config');
+const passport = require('passport');
+
 require('dotenv').config();
 
 const users = require('./routes/api/users');
@@ -12,6 +13,7 @@ const app = express();
 
 //bodyParser middleware
 app.use(bodyParser.json());
+app.use(passport.initialize());
 
 const db = process.env.DBHOST;
 
