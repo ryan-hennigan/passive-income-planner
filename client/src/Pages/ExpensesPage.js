@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ExpenseReport from '../components/ExpenseReport';
 
 
 class ExpensesPage extends Component{
@@ -6,6 +7,7 @@ class ExpensesPage extends Component{
         return(
             <div className="ExpensesPage">
                 ExpensesPage
+                <ExpenseReport/>
             </div>
         );
     }
