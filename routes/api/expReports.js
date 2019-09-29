@@ -8,6 +8,8 @@ const expReport = require('../../controllers/expReport');
 // @access Public
 router.get('/',expReport.getReports);
 
+// router.get('/:id',expReport.getReport);
+
 router.post('/',expReport.createReport);
 
 router.get('/:id/expenses/:eid', expReport.getExpense);
