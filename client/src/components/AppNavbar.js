@@ -10,6 +10,9 @@ import {
     Container
 } from 'reactstrap';
 
+import { userActions } from '../actions';
+
+
 class AppNavbar extends Component{
     
     state = {
@@ -21,6 +24,10 @@ class AppNavbar extends Component{
             isOpen : !this.state.isOpen
         });
     }
+
+    onClick = (e) => {
+        this.props.dispatch(userActions.logout());
+      }
 
     render(){
         return (
@@ -40,12 +47,8 @@ class AppNavbar extends Component{
                                     <NavLink href="/profile">Profile</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/expenses">Expenses</NavLink>
+                                    <NavLink onClick={this.onClick.bind(this)} href="/">Logout</NavLink>
                                 </NavItem>
-                                <NavItem>
-                                    <NavLink href="/incomes">Incomes</NavLink>
-                                </NavItem>
-                                
                             </Nav>
                         </Collapse>
                     </Container>
