@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+const { validationResult } = require('express-validator');
+
 
 // models
 const User = require('../models/user');
@@ -23,8 +25,12 @@ function getUser(req,res){
 }
 
 function registerUser(req,res){
-
-  req.body.email = req.body.email.toLowerCase();
+  
+  const errors = validationResult(req);
+  if(errors){
+    res.json({success:false});
+    return;
+  }
 
   User.findOne({email:req.body.email}, (err,user)=>{
     if(err){
@@ -66,15 +72,7 @@ function deleteUser(req,res){
     else{
       user.remove()
         .then(()=>{
-          Appt.find({client:req.params.id}, (err,appts)=>{
-            if(err){
-              return res.json({success:false});
-            }
-            appts.forEach((appt)=>{
-              appt.remove();
-            });
-            res.json({success:true})
-          });
+          res.json({success:true});
         });
     }
   });
