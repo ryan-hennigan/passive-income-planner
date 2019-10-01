@@ -7,7 +7,6 @@ const passport = require('passport');
 require('dotenv').config();
 
 const users = require('./routes/api/users');
-const expReport = require('./routes/api/expReports');
 
 const app = express();
 
@@ -25,7 +24,6 @@ mongoose
 
 //Use Routes
 app.use('/api/users', users);
-// app.use('/api/expreports',expReport);
 
 if(process.env.NODE_ENV === 'production'){
 

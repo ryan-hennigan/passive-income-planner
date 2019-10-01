@@ -14,6 +14,7 @@ import {
 
 
   import { userActions } from '../actions';
+import RegisterModal from './RegisterModal';
 
 class LoginComp extends Component{
     constructor(props){
@@ -62,8 +63,11 @@ class LoginComp extends Component{
                         <Input type='password' name='password' onChange={this.handleChange.bind(this)}/>
                         </FormGroup>
                         <FormGroup>
-                        <Button className='btn btn-primary'>Login</Button>
-                        {/* <Button className='btn btn-primary'>Register</Button> */}
+                            <Col>
+                                <Button className='btn btn-primary'>Login</Button>
+                                <RegisterModal/>
+                            </Col>
+                        
                         </FormGroup>
                     </Form>
                     <Button color="light" /*href='/api/auth/google'*/ tag="a" >

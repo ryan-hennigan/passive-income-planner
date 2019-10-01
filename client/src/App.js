@@ -1,12 +1,9 @@
 import React from 'react';
 import AppNavbar from "./components/AppNavbar"
-import ExpenseReport from "./components/ExpenseReport";
 import {Router, Route} from 'react-router-dom';
 import {history} from './helpers';
 import {HomePage,
-  ProfilePage, 
-  IncomesPage, 
-  ExpensesPage
+  SettingsPage
 } from './Pages';
 
 
@@ -24,9 +21,7 @@ function App() {
 
         <AppNavbar/>
         <Route exact path='/' component={HomePage} />
-        <Route path= '/profile' component={ProfilePage}/>
-        <Route path= '/expenses' component={ExpensesPage}/>
-        <Route path= '/incomes' component={IncomesPage}/>
+        <Route path= '/settings' component={SettingsPage}/>
       </Router>
     </div>
   );
