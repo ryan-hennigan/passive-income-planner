@@ -27,7 +27,7 @@ function getUser(req,res){
 function registerUser(req,res){
   
   const errors = validationResult(req);
-  if(errors){
+  if(!errors.isEmpty()){
     res.json({success:false});
     return;
   }
@@ -80,14 +80,20 @@ function deleteUser(req,res){
 
 function loginUser(req,res){
 
-  req.body.email = req.body.email.toLowerCase();
+  const errors = validationResult(req);
+  if(!errors.isEmpty()){
+    res.json({success:false});
+    return;
+  }
+
+  //req.body.email = req.body.email.toLowerCase();
 
   User.findOne({email:req.body.email}, (err,user)=>{
     if(err){
-      return res.json({success:false, msg: 'real error'});
+      return res.json({success:false, msg: err});
     }
     if(!user){
-      return res.json({success:false, msg:'nouser here'});
+      return res.json({success:false});
     }
     if(user.validPassowrd(req.body.password)){
       jwt.sign({user}, process.env.JWT_KEY, (err,token)=>{
@@ -98,7 +104,7 @@ function loginUser(req,res){
       });
     }
     else{
-      res.json({success:false, msg:'bad pass'});
+      res.json({success:false});
       return;
     }
   });

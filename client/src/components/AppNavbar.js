@@ -44,7 +44,7 @@ class AppNavbar extends Component{
                                     <NavLink href="/">Home</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/profile">Profile</NavLink>
+                                    <NavLink href="/settings">Settings</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink onClick={this.onClick.bind(this)} href="/">Logout</NavLink>

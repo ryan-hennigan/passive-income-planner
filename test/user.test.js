@@ -87,6 +87,22 @@ describe('Users', () =>{
             done();
           });
       });
+      it('should pass on valid registration', (done)=>{
+        let user ={
+          name:'ryan',
+          email:'ryan2@email.com',
+          password:'pass123'
+        }
+        chai.request(app)
+          .post('/api/users/register')
+          .send(user)
+          .end((err,res)=>{
+            res.should.have.status(200);
+            res.body.should.be.a('object');
+            res.body.should.have.property('success').eql(true);
+            done();
+          });
+      });
     });// register user
 
     /* Login User */
